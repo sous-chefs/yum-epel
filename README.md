@@ -2,9 +2,9 @@ yum-centos Cookbook
 ============
 
 The yum-epel cookbook takes over management of the default
-repositoryids that ship with CentOS systems. It allows attribute
-manipulation of epel epel-debuginfo epel-source epel-testing
-epel-testing-debuginfo and epel-testing-source
+repositoryids shipped with epel-release. It allows attribute
+manipulation of `epel`, `epel-debuginfo`, `epel-source`, `epel-testing`,
+`epel-testing-debuginfo`, and `epel-testing-source`.
 
 Requirements
 ------------
