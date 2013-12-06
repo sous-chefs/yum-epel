@@ -1,3 +1,3 @@
 @test "install a package" {
-      yum -y install ghc
+      sudo yum -y install alpine
 }
