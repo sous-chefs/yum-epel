@@ -1,3 +1,5 @@
+# Encoding: utf-8
+
 name             'yum-epel'
 maintainer       'apachev2'
 maintainer_email 'Sean OMeara <someara@opscode.com>'
