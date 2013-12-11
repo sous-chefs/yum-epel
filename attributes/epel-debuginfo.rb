@@ -1,5 +1,3 @@
-# Encoding: utf-8
-
 default['yum']['epel-debuginfo']['repositoryid'] = 'epel-debuginfo'
 
 case node['platform_version'].to_i

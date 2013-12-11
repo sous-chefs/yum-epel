@@ -1,9 +1,8 @@
-# Encoding: utf-8
 #
-# Author:: Sean OMeara (<someara@opscode.com>)
-# Recipe:: yum::_default_centos
+# Author:: Sean OMeara (<someara@getchef.com>)
+# Recipe:: yum-epel::default
 #
-# Copyright 2013, Opscode
+# Copyright 2013, Chef
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
