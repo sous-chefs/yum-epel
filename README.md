@@ -1,4 +1,4 @@
-yum-centos Cookbook
+yum-epel Cookbook
 ============
 
 The yum-epel cookbook takes over management of the default
