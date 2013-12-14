@@ -12,7 +12,7 @@ describe 'yum-epel::default' do
       epel-testing-debuginfo
       epel-testing-source
       }.each do |repo|
-      it "creates yum_repository[#{epel}]" do
+      it "creates yum_repository[#{repo}]" do
         expect(chef_run).to create_yum_repository(repo)
       end
 
