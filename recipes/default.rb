@@ -48,6 +48,7 @@
     sslclientkey node['yum'][repo]['sslclientkey']
     sslverify node['yum'][repo]['sslverify']
     timeout node['yum'][repo]['timeout']
+    only_if { node['yum'][repo]['enabled'] }
     action :create
   end
 end
