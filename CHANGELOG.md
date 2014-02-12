@@ -2,6 +2,11 @@ yum-epel Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the yum-centos cookbook.
 
+v0.3.0 (2014-02-12)
+-------------------
+[COOK-4292] - Do not manage secondary repos by default
+
+
 v0.2.0
 ------
 Adding Amazon Linux support
