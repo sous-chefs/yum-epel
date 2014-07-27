@@ -16,10 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-%w{
-  epel epel-debuginfo epel-source
-  epel-testing epel-testing-debuginfo epel-testing-source
-  }.each do |repo|
+node['yum-epel']['repositories'].each do |repo|
 
   if node['yum'][repo]['managed']
     yum_repository repo do
