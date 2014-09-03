@@ -13,14 +13,14 @@ describe 'yum-epel::default' do
       end.converge(described_recipe)
     end
 
-    %w{
+    %w(
       epel
       epel-debuginfo
       epel-source
       epel-testing
       epel-testing-debuginfo
       epel-testing-source
-      }.each do |repo|
+    ).each do |repo|
       it "creates yum_repository[#{repo}]" do
         expect(chef_run).to create_yum_repository(repo)
       end
