@@ -1,3 +1,3 @@
 @test "install a package" {
-      sudo yum -y install alpine
+      sudo yum -y install clamav
 }
