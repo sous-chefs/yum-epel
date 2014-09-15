@@ -22,7 +22,7 @@ default['yum-epel']['repositories'] = %w{epel epel-debuginfo epel-source epel-te
 ``` ruby
 default['yum']['epel']['repositoryid'] = 'epel'
 default['yum']['epel']['description'] = 'Extra Packages for Enterprise Linux 6 - $basearch'
-default['yum']['epel']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-5&arch=$basearch'
+default['yum']['epel']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=epel-5&arch=$basearch'
 default['yum']['epel']['gpgkey'] = 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
 default['yum']['epel']['failovermethod'] = 'priority'
 default['yum']['epel']['gpgcheck'] = true
@@ -44,7 +44,7 @@ default['yum']['epel-debuginfo']['managed'] = false
 ``` ruby
 default['yum']['epel-source']['repositoryid'] = 'epel-source'
 default['yum']['epel-source']['description'] = 'Extra Packages for Enterprise Linux 6 - $basearch - Source'
-default['yum']['epel-source']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-source-6&arch=$basearch'
+default['yum']['epel-source']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=epel-source-6&arch=$basearch'
 default['yum']['epel-source']['gpgkey'] = 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
 default['yum']['epel-source']['failovermethod'] = 'priority'
 default['yum']['epel-source']['gpgcheck'] = true

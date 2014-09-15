@@ -3,7 +3,7 @@ default['yum']['epel-testing-source']['repositoryid'] = 'epel-testing-source'
 case node['platform']
 when 'amazon'
   default['yum']['epel-testing-source']['description'] = 'Extra Packages for Enterprise Linux 6 - $basearch'
-  default['yum']['epel-testing-source']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch'
+  default['yum']['epel-testing-source']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=$basearch'
   default['yum']['epel-testing-source']['gpgkey'] = 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
 else
   case node['platform_version'].to_i
