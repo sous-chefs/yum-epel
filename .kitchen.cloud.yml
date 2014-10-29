@@ -40,17 +40,17 @@ platforms:
     ssh_key_ids: <%= ENV['DIGITAL_OCEAN_SSH_KEY_IDS'] %>
     ssh_key: <%= ENV['DIGITAL_OCEAN_SSH_KEY_PATH'] %>
 
-- name: redhat-6.5
-  driver_plugin: ec2
-  driver_config:
-    image_id: ami-8d756fe4
-    username: ec2-user
-    ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
-
 - name: amazon-2014.03
   driver_plugin: ec2
   driver_config:
     image_id: ami-6b726502
+    username: ec2-user
+    ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
+
+- name: redhat-6.5
+  driver_plugin: ec2
+  driver_config:
+    image_id: ami-8d756fe4
     username: ec2-user
     ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
 
