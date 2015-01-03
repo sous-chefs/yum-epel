@@ -5,10 +5,10 @@ provisioner:
   name: chef_zero
 
 platforms:
-- name: centos-6.4
-  driver_config:
-    box: opscode-centos-6.4
-    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-6.4_chef-11.4.0.box
+  - name: centos-5.10
+  - name: centos-6.5
+  - name: centos-7.0
+  - name: fedora-20
 
 suites:
   - name: default

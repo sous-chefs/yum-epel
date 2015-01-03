@@ -14,7 +14,11 @@ else
   when 6
     default['yum']['epel-testing-debuginfo']['description'] = 'Extra Packages for Enterprise Linux 6 - Testing - $basearch Debug'
     default['yum']['epel-testing-debuginfo']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel6&arch=$basearch'
-    default['yum']['epel-testing-debuginfo']['gpgkey'] = 'http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
+    default['yum']['epel-testing-debuginfo']['gpgkey'] = 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
+  when 7
+    default['yum']['epel-testing-debuginfo']['description'] = 'Extra Packages for Enterprise Linux 7 - Testing - $basearch Debug'
+    default['yum']['epel-testing-debuginfo']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel7&arch=$basearch'
+    default['yum']['epel-testing-debuginfo']['gpgkey'] = 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
   end
 end
 
