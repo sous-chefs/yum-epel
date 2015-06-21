@@ -1,6 +1,11 @@
 yum-epel Cookbook CHANGELOG
 ======================
 
+v0.6.1 (2015-06-21)
+-------------------
+- Switching to https for URL links
+- Using metalink URLs
+
 v0.6.0 (2015-01-03)
 -------------------
 - Adding EL7 support
