@@ -1,6 +1,12 @@
 yum-epel Cookbook CHANGELOG
 ======================
 
+v0.6.2 (2015-06-21)
+-------------------
+- Depending on yum ~> 3.2
+- Support for the password attribute wasn't added to the
+  yum_repository LWRP until yum 3.2.0.  
+
 v0.6.1 (2015-06-21)
 -------------------
 - Switching to https for URL links
