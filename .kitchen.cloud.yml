@@ -47,21 +47,6 @@ platforms:
     username: ec2-user
     ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
 
-- name: redhat-6.5
-  driver_plugin: ec2
-  driver_config:
-    image_id: ami-8d756fe4
-    username: ec2-user
-    ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
-
-- name: redhat-7.0
-  driver_plugin: ec2
-  driver_config:
-    image_id: ami-a8d369c0
-    username: ec2-user
-    ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
-  run_list:
-
 suites:
 - name: default
   run_list:
