@@ -1,5 +1,7 @@
 yum-epel Cookbook
 ============
+[![Build Status](https://travis-ci.org/chef-cookbooks/yum-epel.svg?branch=master)](http://travis-ci.org/chef-cookbooks/yum-epel)
+[![Cookbook Version](https://img.shields.io/cookbook/v/yum-epel.svg)](https://supermarket.chef.io/cookbooks/yum-epel)
 
 The yum-epel cookbook takes over management of the default
 repositoryids shipped with epel-release. It allows attribute
