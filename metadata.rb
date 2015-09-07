@@ -7,7 +7,9 @@ version '0.6.2'
 
 depends 'yum', '~> 3.2'
 
-supports 'redhat'
-supports 'centos'
-supports 'scientific'
-supports 'amazon'
+%w(amazon centos fedora oracle redhat scientific).each do |os|
+  supports os
+end
+
+source_url 'https://github.com/chef-cookbooks/yum-epel' if respond_to?(:source_url)
+issues_url 'https://github.com/chef-cookbooks/yum-epel/issues' if respond_to?(:issues_url)
