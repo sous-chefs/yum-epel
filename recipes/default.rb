@@ -17,7 +17,6 @@
 # limitations under the License.
 
 node['yum-epel']['repositories'].each do |repo|
-
   if node['yum'][repo]['managed']
     yum_repository repo do
       baseurl node['yum'][repo]['baseurl']
