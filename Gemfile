@@ -1,9 +1,13 @@
 source 'https://rubygems.org'
 
-group :lint do
-  gem 'foodcritic', '~> 4.0'
-  gem 'rubocop', '~> 0.33'
+group :rake do
   gem 'rake'
+  gem 'tomlrb'
+end
+
+group :lint do
+  gem 'foodcritic', '~> 5.0'
+  gem 'rubocop', '~> 0.33'
 end
 
 group :unit do
@@ -25,8 +29,12 @@ group :kitchen_cloud do
 end
 
 group :development do
-  gem 'guard'
-  gem 'guard-rspec'
+  gem 'ruby_gntp'
+  gem 'growl'
+  gem 'rb-fsevent'
+  gem 'guard', '~> 2.4'
   gem 'guard-kitchen'
-  gem 'guard-foodcritic', '>= 1.0'
+  gem 'guard-foodcritic'
+  gem 'guard-rspec'
+  gem 'guard-rubocop'
 end
