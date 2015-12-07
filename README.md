@@ -119,7 +119,7 @@ default_attributes(
 
 Uncommonly used repositoryids are not managed by default. This is speeds up integration testing pipelines by avoiding yum-cache builds that nobody cares about. To enable the epel-testing repository with a wrapper cookbook, place the following in a recipe:
 
-```
+```ruby
 node.default['yum']['epel-testing']['enabled'] = true
 node.default['yum']['epel-testing']['managed'] = true
 include_recipe 'yum-epel'
@@ -128,7 +128,7 @@ include_recipe 'yum-epel'
 ## More Examples
 Point the epel repositories at an internally hosted server.
 
-```
+```ruby
 node.default['yum']['epel']['enabled'] = true
 node.default['yum']['epel']['mirrorlist'] = nil
 node.default['yum']['epel']['baseurl'] = 'https://internal.example.com/centos/6/os/x86_64'
