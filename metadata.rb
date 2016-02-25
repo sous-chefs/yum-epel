@@ -5,7 +5,7 @@ license 'Apache 2.0'
 description 'Installs and configures the EPEL Yum repository'
 version '0.6.5'
 
-depends 'yum', '~> 3.2'
+depends 'yum', '~> 3.10.0'
 
 %w(amazon centos fedora oracle redhat scientific).each do |os|
   supports os
