@@ -1,6 +1,10 @@
 # yum-epel Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## v0.6.5
+- updated to use `make_cache` option that yum cookbook allows for the yum resource to use.
+
+
 ## v0.6.5 (2015-11-23)
 - Fix setting bool false properties
 
