@@ -27,6 +27,7 @@ else
       default['yum']['epel']['gpgkey'] = 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
     end
   end
+end
 
 default['yum']['epel']['failovermethod'] = 'priority'
 default['yum']['epel']['gpgcheck'] = true
