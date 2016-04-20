@@ -1,6 +1,6 @@
 default['yum']['epel']['repositoryid'] = 'epel'
 
-case node[:kernel][:machine]
+case node['kernel']['machine']
 when 's390x'
   default['yum']['epel']['description'] = 'Extra Packages for Enterprise Linux 7 - $basearch'
   default['yum']['epel']['baseurl'] = 'https://kojipkgs.fedoraproject.org/rhel/rc/7/Server/s390x/os/'
