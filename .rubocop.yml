@@ -21,13 +21,15 @@ Style/SpaceBeforeFirstArg:
   Enabled: false
 LineLength:
   Enabled: false
+Lint/AmbiguousRegexpLiteral:
+  Enabled: false
 MethodLength:
   Enabled: false
 Metrics/AbcSize:
   Enabled: false
-Metrics/ModuleLength:
-  Enabled: false
 PerceivedComplexity:
   Enabled: false
 Style/ClassAndModuleChildren:
+  Enabled: false
+Style/ClassVars:
   Enabled: false
