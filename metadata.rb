@@ -7,7 +7,7 @@ version '0.6.6'
 
 depends 'yum', '~> 3.10.0'
 
-%w(amazon centos fedora oracle redhat scientific).each do |os|
+%w(amazon centos fedora oracle redhat scientific zlinux).each do |os|
   supports os
 end
 
