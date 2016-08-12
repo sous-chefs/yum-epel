@@ -4,12 +4,12 @@ describe 'yum-epel::default' do
   context 'yum-epel::default uses default attributes' do
     let(:chef_run) do
       ChefSpec::ServerRunner.new do |node|
-        node.set['yum']['epel']['managed'] = true
-        node.set['yum']['epel-debuginfo']['managed'] = true
-        node.set['yum']['epel-source']['managed'] = true
-        node.set['yum']['epel-testing']['managed'] = true
-        node.set['yum']['epel-testing-debuginfo']['managed'] = true
-        node.set['yum']['epel-testing-source']['managed'] = true
+        node.normal['yum']['epel']['managed'] = true
+        node.normal['yum']['epel-debuginfo']['managed'] = true
+        node.normal['yum']['epel-source']['managed'] = true
+        node.normal['yum']['epel-testing']['managed'] = true
+        node.normal['yum']['epel-testing-debuginfo']['managed'] = true
+        node.normal['yum']['epel-testing-source']['managed'] = true
       end.converge(described_recipe)
     end
 

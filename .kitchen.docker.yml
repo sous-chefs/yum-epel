@@ -25,6 +25,13 @@ platforms:
   driver:
     image: centos:7
 
+- name: fedora-latest
+  driver:
+    image: fedora:latest
+    pid_one_command: /usr/lib/systemd/systemd
+    intermediate_instructions:
+      - RUN dnf -y install yum which systemd-sysv initscripts
+
 suites:
   - name: default
     run_list:
