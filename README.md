@@ -1,12 +1,13 @@
 # yum-epel Cookbook
 [![Build Status](https://travis-ci.org/chef-cookbooks/yum-epel.svg?branch=master)](http://travis-ci.org/chef-cookbooks/yum-epel) [![Cookbook Version](https://img.shields.io/cookbook/v/yum-epel.svg)](https://supermarket.chef.io/cookbooks/yum-epel)
 
+Extra Packages for Enterprise Linux (or EPEL) is a Fedora Special Interest Group that creates, maintains, and manages a high quality set of additional packages for Enterprise Linux, including, but not limited to, Red Hat Enterprise Linux (RHEL), CentOS and Scientific Linux (SL), Oracle Linux (OL).
+
 The yum-epel cookbook takes over management of the default repositoryids shipped with epel-release. It allows attribute manipulation of `epel`, `epel-debuginfo`, `epel-source`, `epel-testing`, `epel-testing-debuginfo`, and `epel-testing-source`.
 
 ## Requirements
 ### Platforms
 - RHEL/CentOS and derivatives
-- Fedora
 
 ### Chef
 - Chef 11+
@@ -140,7 +141,7 @@ include_recipe 'yum-epel'
 ## License & Authors
 **Author:** Cookbook Engineering Team ([cookbooks@chef.io](mailto:cookbooks@chef.io))
 
-**Copyright:** 2011-2015, Chef Software, Inc.
+**Copyright:** 2011-2016, Chef Software, Inc.
 
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
