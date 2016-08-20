@@ -2,8 +2,10 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
-## UNRELEASED
+## v0.7.1 (2016-08-19)
 - Remove bats testing
+- Fix attribute settings 
+- Cleanup travis file
 
 ## v0.7.0 (2016-04-27)
 
