@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## UNRELEASED
+- Remove bats testing
+
 ## v0.7.0 (2016-04-27)
 
 - Added support for IBM zlinux platform
