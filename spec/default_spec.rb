@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'yum-epel::default' do
   context 'yum-epel::default uses default attributes' do
-    let(:chef_run) do
+    cached(:chef_run) do
       ChefSpec::ServerRunner.new do |node|
         node.normal['yum']['epel']['managed'] = true
         node.normal['yum']['epel-debuginfo']['managed'] = true
