@@ -10,7 +10,7 @@ The yum-epel cookbook takes over management of the default repositoryids shipped
 - RHEL/CentOS and derivatives
 
 ### Chef
-- Chef 11+
+- Chef 12+
 
 ### Cookbooks
 - yum version 3.6.3 or higher
