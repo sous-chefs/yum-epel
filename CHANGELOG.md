@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## 1.0.1 (2016-09-11)
+- Fix epel-testing attributes
+
 ## 1.0.0 (2016-09-06)
 - Add chef_version metadata
 - Testing updates
