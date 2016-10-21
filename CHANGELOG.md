@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## 1.0.2 (2016-10-21)
+- Remove upper bound on yum constraint
+
 ## 1.0.1 (2016-09-11)
 - Fix epel-testing attributes
 
