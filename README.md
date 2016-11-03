@@ -12,9 +12,6 @@ The yum-epel cookbook takes over management of the default repositoryids shipped
 ### Chef
 - Chef 12+
 
-### Cookbooks
-- yum version 3.6.3 or higher
-
 ## Attributes
 The following attributes are set by default
 
