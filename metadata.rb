@@ -6,7 +6,7 @@ description 'Installs and configures the EPEL Yum repository'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '1.0.2'
 
-depends 'yum', '>= 3.6'
+depends 'compat_resource', '>= 12.14.6'
 
 %w(amazon centos oracle redhat scientific zlinux).each do |os|
   supports os

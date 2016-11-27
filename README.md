@@ -7,16 +7,21 @@ Extra Packages for Enterprise Linux (or EPEL) is a Fedora Special Interest Group
 The yum-epel cookbook takes over management of the default repositoryids shipped with epel-release. It allows attribute manipulation of `epel`, `epel-debuginfo`, `epel-source`, `epel-testing`, `epel-testing-debuginfo`, and `epel-testing-source`.
 
 ## Requirements
+
 ### Platforms
+
 - RHEL/CentOS and derivatives
 
 ### Chef
-- Chef 12+
+
+- Chef 12.1+
 
 ### Cookbooks
-- yum version 3.6.3 or higher
+
+- compat_resource
 
 ## Attributes
+
 The following attributes are set by default
 
 ```ruby
@@ -140,6 +145,7 @@ include_recipe 'yum-epel'
 ```
 
 ## License & Authors
+
 **Author:** Cookbook Engineering Team ([cookbooks@chef.io](mailto:cookbooks@chef.io))
 
 **Copyright:** 2011-2016, Chef Software, Inc.
