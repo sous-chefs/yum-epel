@@ -2,18 +2,28 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## 2.0.0 (2016-11-26)
+
+- Clarify that we require Chef 12.1+ not 12.0+
+- Use compat_resource instead of the yum cookbook
+- Add integration testing with inspec
+
 ## 1.0.2 (2016-10-21)
+
 - Remove upper bound on yum constraint
 
 ## 1.0.1 (2016-09-11)
+
 - Fix epel-testing attributes
 
 ## 1.0.0 (2016-09-06)
+
 - Add chef_version metadata
 - Testing updates
 - Remove support for Chef 11
 
 ## v0.7.1 (2016-08-19)
+
 - Remove bats testing
 - Fix attribute settings 
 - Cleanup travis file
