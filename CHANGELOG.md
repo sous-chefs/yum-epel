@@ -2,6 +2,15 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## 2.1.0 (2016-12-22)
+
+- Test in Travis using the current build of chef/chef docker image
+- Test on older Chef
+- allow the use of any valid property via attributes
+- fixing tests
+- output versions in the job that is being ran
+- cops
+
 ## 2.0.0 (2016-11-26)
 
 - Clarify that we require Chef 12.1+ not 12.0+
@@ -25,7 +34,7 @@ This file is used to list changes made in each version of the yum-epel cookbook.
 ## v0.7.1 (2016-08-19)
 
 - Remove bats testing
-- Fix attribute settings 
+- Fix attribute settings
 - Cleanup travis file
 
 ## v0.7.0 (2016-04-27)
