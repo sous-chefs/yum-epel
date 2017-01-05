@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## 2.1.1 (2017-01-05)
+
+- Revert how mirror list strings are generated to fix RHEL 7
+
 ## 2.1.0 (2016-12-22)
 
 - Test in Travis using the current build of chef/chef docker image
