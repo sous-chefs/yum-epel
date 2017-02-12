@@ -3,7 +3,7 @@ driver:
 
 provisioner:
   name: chef_zero
-  require_chef_omnibus: 12.12.15 # a chef release without yum built in
+  deprecations_as_errors: true
 
 verifier:
   name: inspec
