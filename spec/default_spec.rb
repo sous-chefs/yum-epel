@@ -27,19 +27,10 @@ describe 'yum-epel::default' do
     end
   end
 
-  # do these 4 specs seem like overkill to you?
+  # do these specs seem like overkill to you?
   # well we want to make sure someone REALLY doesn't try to set the URL back to $releasever
   # That equals release7 on RHEL 7 and EPEL repo doesn't return anything for that so please
   # leave node['platform_version'].to_i
-  context 'on RHEL 5' do
-    let(:chef_run) do
-      ChefSpec::ServerRunner.new(platform: 'centos', version: '5.11').converge('yum-epel::default')
-    end
-
-    it 'creates epel repo with proper version string' do
-      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-5&arch=$basearch')
-    end
-  end
 
   context 'on RHEL 6' do
     let(:chef_run) do
