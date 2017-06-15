@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## 2.1.2 (2017-06-15)
+
+- Switch from Rake testing to Local Delivery
+- Update apache2 license string to be a SPDX compliant string
+- Change yum repo location of gpgkey to download.fedoraproject.org instead of dl.fedoraproject.org
+- Avoid chefspec deprecations and speed up specs
+
 ## 2.1.1 (2017-01-05)
 
 - Revert how mirror list strings are generated to fix RHEL 7
