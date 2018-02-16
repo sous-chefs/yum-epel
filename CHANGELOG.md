@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## 3.0.0 (2018-02-16)
+
+- Require Chef 12.14+ and remove the compat_resource dependency
+
 ## 2.1.2 (2017-06-15)
 
 - Switch from Rake testing to Local Delivery
