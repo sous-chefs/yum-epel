@@ -3,7 +3,7 @@ default['yum']['epel-debuginfo']['description'] = "Extra Packages for #{node['pl
 case node['platform']
 when 'amazon'
   case node['platform_version']
-  when /1\..*/
+  when /201.*/
     default['yum']['epel-debuginfo']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-6&arch=$basearch'
     default['yum']['epel-debuginfo']['gpgkey'] = 'http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
   when /2\..*/
