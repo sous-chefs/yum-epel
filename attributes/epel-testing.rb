@@ -3,10 +3,10 @@ default['yum']['epel-testing']['description'] = "Extra Packages for #{node['plat
 case node['platform']
 when 'amazon'
   case node['platform_version']
-  when /1.*/
+  when /\A1\..*/
     default['yum']['epel-testing']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel6&arch=$basearch'
     default['yum']['epel-testing']['gpgkey'] = 'http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
-  when /2.*/
+  when /\A2\..*/
     default['yum']['epel-testing']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel7&arch=$basearch'
     default['yum']['epel-testing']['gpgkey'] = 'http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
   end
