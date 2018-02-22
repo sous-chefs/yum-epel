@@ -8,10 +8,10 @@ else
   case node['platform']
   when 'amazon'
     case node['platform_version']
-    when /\A1\..*/
+    when /1\..*/
       default['yum']['epel']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch'
       default['yum']['epel']['gpgkey'] = 'http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
-    when /\A2\..*/
+    when /2\..*/
       default['yum']['epel']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-7&arch=$basearch'
       default['yum']['epel']['gpgkey'] = 'http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
     else
