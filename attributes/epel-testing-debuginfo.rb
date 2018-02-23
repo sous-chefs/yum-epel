@@ -10,8 +10,8 @@ when 'amazon'
     default['yum']['epel-testing-debuginfo']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=testing-debug-epel7&arch=$basearch'
     default['yum']['epel-testing-debuginfo']['gpgkey'] = 'http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
   else
-    default['yum']['epel-debuginfo']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-6&arch=$basearch'
-    default['yum']['epel-debuginfo']['gpgkey'] = 'http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
+    default['yum']['epel-testing-debuginfo']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=testing-debug-epel6&arch=$basearch'
+    default['yum']['epel-testing-debuginfo']['gpgkey'] = 'http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
   end
 else
   default['yum']['epel-testing-debuginfo']['mirrorlist'] = "http://mirrors.fedoraproject.org/mirrorlist?repo=testing-debug-epel#{node['platform_version'].to_i}&arch=$basearch"
