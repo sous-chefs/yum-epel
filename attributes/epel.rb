@@ -1,6 +1,10 @@
 default['yum']['epel']['repositoryid'] = 'epel'
 default['yum']['epel']['description'] = "Extra Packages for #{node['platform_version'].to_i} - $basearch"
+default['yum']['epel']['gpgcheck'] = true
 case node['kernel']['machine']
+when 'armv7l','armv7hl'
+  default['yum']['epel']['baseurl'] = 'https://armv7.dev.centos.org/repodir/epel-pass-1/'
+  default['yum']['epel']['gpgcheck'] = false
 when 's390x'
   default['yum']['epel']['baseurl'] = 'https://kojipkgs.fedoraproject.org/rhel/rc/7/Server/s390x/os/'
   default['yum']['epel']['gpgkey'] = 'https://kojipkgs.fedoraproject.org/rhel/rc/7/Server/s390x/os/RPM-GPG-KEY-redhat-release'
@@ -24,7 +28,6 @@ else
   end
 end
 default['yum']['epel']['failovermethod'] = 'priority'
-default['yum']['epel']['gpgcheck'] = true
 default['yum']['epel']['enabled'] = true
 default['yum']['epel']['managed'] = true
 default['yum']['epel']['make_cache'] = true
