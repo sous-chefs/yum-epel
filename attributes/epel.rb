@@ -2,7 +2,7 @@ default['yum']['epel']['repositoryid'] = 'epel'
 default['yum']['epel']['description'] = "Extra Packages for #{node['platform_version'].to_i} - $basearch"
 default['yum']['epel']['gpgcheck'] = true
 case node['kernel']['machine']
-when 'armv7l','armv7hl'
+when 'armv7l', 'armv7hl'
   default['yum']['epel']['baseurl'] = 'https://armv7.dev.centos.org/repodir/epel-pass-1/'
   default['yum']['epel']['gpgcheck'] = false
 when 's390x'
