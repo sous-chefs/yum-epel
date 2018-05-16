@@ -34,7 +34,7 @@ describe 'yum-epel::default' do
 
   context 'on RHEL 6' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'centos', version: '6.8').converge('yum-epel::default')
+      ChefSpec::SoloRunner.new(platform: 'centos', version: '6.9').converge('yum-epel::default')
     end
 
     it 'creates epel repo with proper version string' do
