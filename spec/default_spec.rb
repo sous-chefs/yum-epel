@@ -52,13 +52,23 @@ describe 'yum-epel::default' do
     end
   end
 
-  context 'on Amazon' do
+  context 'on Amazon 2018' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'amazon', version: '2016.03').converge('yum-epel::default')
+      ChefSpec::SoloRunner.new(platform: 'amazon', version: '2018.03').converge('yum-epel::default')
     end
 
     it 'creates epel repo with proper version string' do
       expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch')
+    end
+  end
+
+  context 'on Amazon 2' do
+    let(:chef_run) do
+      ChefSpec::SoloRunner.new(platform: 'amazon', version: '2').converge('yum-epel::default')
+    end
+
+    it 'creates epel repo with proper version string' do
+      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-7&arch=$basearch')
     end
   end
 end
