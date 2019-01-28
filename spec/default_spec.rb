@@ -38,7 +38,7 @@ describe 'yum-epel::default' do
     end
 
     it 'creates epel repo with proper version string' do
-      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch')
+      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch')
     end
   end
 
@@ -48,7 +48,7 @@ describe 'yum-epel::default' do
     end
 
     it 'creates epel repo with proper version string' do
-      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-7&arch=$basearch')
+      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-7&arch=$basearch')
     end
   end
 
@@ -58,7 +58,7 @@ describe 'yum-epel::default' do
     end
 
     it 'creates epel repo with proper version string' do
-      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch')
+      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch')
     end
   end
 
@@ -68,7 +68,7 @@ describe 'yum-epel::default' do
     end
 
     it 'creates epel repo with proper version string' do
-      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-7&arch=$basearch')
+      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-7&arch=$basearch')
     end
   end
 end

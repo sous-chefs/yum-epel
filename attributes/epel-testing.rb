@@ -3,14 +3,14 @@ default['yum']['epel-testing']['description'] = "Extra Packages for #{node['plat
 
 if platform?('amazon')
   if node['platform_version'].to_i > 2010
-    default['yum']['epel-testing']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel6&arch=$basearch'
-    default['yum']['epel-testing']['gpgkey'] = 'http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
+    default['yum']['epel-testing']['mirrorlist'] = 'https://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel6&arch=$basearch'
+    default['yum']['epel-testing']['gpgkey'] = 'https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
   else
-    default['yum']['epel-testing']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel7&arch=$basearch'
-    default['yum']['epel-testing']['gpgkey'] = 'http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
+    default['yum']['epel-testing']['mirrorlist'] = 'https://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel7&arch=$basearch'
+    default['yum']['epel-testing']['gpgkey'] = 'https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
   end
 else
-  default['yum']['epel-testing']['mirrorlist'] = "http://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel#{node['platform_version'].to_i}&arch=$basearch"
+  default['yum']['epel-testing']['mirrorlist'] = "https://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel#{node['platform_version'].to_i}&arch=$basearch"
   default['yum']['epel-testing']['gpgkey'] = "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-#{node['platform_version'].to_i}"
 end
 default['yum']['epel-testing']['failovermethod'] = 'priority'
