@@ -35,7 +35,7 @@ platforms:
     image: dokken/centos-7
     pid_one_command: /usr/lib/systemd/systemd
 
-suites:
-  - name: default
-    run_list:
-      - recipe[yum-epel::default]
+- name: centos-8
+  driver:
+    image: dokken/centos-8
+    pid_one_command: /usr/lib/systemd/systemd
