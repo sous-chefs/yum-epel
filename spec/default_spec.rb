@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'yum-epel::default' do
   context 'yum-epel::default uses default attributes' do
     cached(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'centos', version: '7.3.1611') do |node|
+      ChefSpec::SoloRunner.new(platform: 'centos', version: '7') do |node|
         node.override['yum']['epel']['managed'] = true
         node.override['yum']['epel-debuginfo']['managed'] = true
         node.override['yum']['epel-source']['managed'] = true
@@ -34,7 +34,7 @@ describe 'yum-epel::default' do
 
   context 'on RHEL 6' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'centos', version: '6.9').converge('yum-epel::default')
+      ChefSpec::SoloRunner.new(platform: 'centos', version: '6').converge('yum-epel::default')
     end
 
     it 'creates epel repo with proper version string' do
@@ -44,7 +44,7 @@ describe 'yum-epel::default' do
 
   context 'on RHEL 7' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'centos', version: '7.3.1611').converge('yum-epel::default')
+      ChefSpec::SoloRunner.new(platform: 'centos', version: '7').converge('yum-epel::default')
     end
 
     it 'creates epel repo with proper version string' do
