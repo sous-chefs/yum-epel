@@ -11,4 +11,4 @@ end
 
 source_url 'https://github.com/chef-cookbooks/yum-epel'
 issues_url 'https://github.com/chef-cookbooks/yum-epel/issues'
-chef_version '>= 12.14'
+chef_version '>= 12.15'
