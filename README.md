@@ -14,7 +14,7 @@ The yum-epel cookbook takes over management of the default repositoryids shipped
 
 ### Chef
 
-- Chef 12.14+
+- Chef 12.15+
 
 ### Cookbooks
 
