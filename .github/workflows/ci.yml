@@ -24,9 +24,7 @@
       strategy:
         matrix:
           os:
-            - 'amazonlinux'
             - 'amazonlinux-2'
-            - 'centos-6'
             - 'centos-7'
             - 'centos-8'
           suite:

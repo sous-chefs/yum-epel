@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## Unreleased
+
+- Remove CentOS 6 / Amazon Linux 201X support/testing
+
 ## 3.3.0 (2018-10-09)
 
 - Fix cookbook to work on all releases of Amazon Linux 2

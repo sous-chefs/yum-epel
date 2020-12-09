@@ -10,13 +10,8 @@ when 's390x'
   default['yum']['epel']['gpgkey'] = 'https://kojipkgs.fedoraproject.org/rhel/rc/7/Server/s390x/os/RPM-GPG-KEY-redhat-release'
 else
   if platform?('amazon')
-    if node['platform_version'].to_i > 2010
-      default['yum']['epel']['mirrorlist'] = 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch'
-      default['yum']['epel']['gpgkey'] = 'https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
-    else
-      default['yum']['epel']['mirrorlist'] = 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-7&arch=$basearch'
-      default['yum']['epel']['gpgkey'] = 'https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
-    end
+    default['yum']['epel']['mirrorlist'] = 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-7&arch=$basearch'
+    default['yum']['epel']['gpgkey'] = 'https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
   else
     default['yum']['epel']['mirrorlist'] = "https://mirrors.fedoraproject.org/mirrorlist?repo=epel-#{node['platform_version'].to_i}&arch=$basearch"
     default['yum']['epel']['gpgkey'] = "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-#{node['platform_version'].to_i}"
