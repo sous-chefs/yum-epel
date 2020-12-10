@@ -29,6 +29,7 @@
             - 'centos-8'
           suite:
             - 'default'
+            - 'all'
         fail-fast: false
 
       steps:

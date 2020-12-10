@@ -18,3 +18,23 @@ suites:
   - name: default
     run_list:
       - recipe[yum-epel::default]
+  - name: all
+    run_list:
+      - recipe[yum-epel::default]
+    attributes:
+      yum:
+        epel-debuginfo:
+          managed: true
+          enabled: true
+        epel-source:
+          managed: true
+          enabled: true
+        epel-testing:
+          managed: true
+          enabled: true
+        epel-testing-debuginfo:
+          managed: true
+          enabled: true
+        epel-testing-source:
+          managed: true
+          enabled: true
