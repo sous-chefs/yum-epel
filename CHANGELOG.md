@@ -9,6 +9,7 @@ This file is used to list changes made in each version of the yum-epel cookbook.
 - Fix repo descriptions on Amazon Linux
 - Test all supported repos in new "all" suite
 - Ensure other epel repos are not enabled in default suite
+- Add various modular and playground repos for EL8
 
 ## 3.3.0 (2018-10-09)
 

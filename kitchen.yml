@@ -26,6 +26,24 @@ suites:
         epel-debuginfo:
           managed: true
           enabled: true
+        epel-modular:
+          managed: true
+          enabled: true
+        epel-modular-debuginfo:
+          managed: true
+          enabled: true
+        epel-modular-source:
+          managed: true
+          enabled: true
+        epel-playground:
+          managed: true
+          enabled: true
+        epel-playground-debuginfo:
+          managed: true
+          enabled: true
+        epel-playground-source:
+          managed: true
+          enabled: true
         epel-source:
           managed: true
           enabled: true
@@ -33,6 +51,15 @@ suites:
           managed: true
           enabled: true
         epel-testing-debuginfo:
+          managed: true
+          enabled: true
+        epel-testing-modular:
+          managed: true
+          enabled: true
+        epel-testing-modular-debuginfo:
+          managed: true
+          enabled: true
+        epel-testing-modular-source:
           managed: true
           enabled: true
         epel-testing-source:
