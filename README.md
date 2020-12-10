@@ -4,7 +4,27 @@
 
 Extra Packages for Enterprise Linux (or EPEL) is a Fedora Special Interest Group that creates, maintains, and manages a high quality set of additional packages for Enterprise Linux, including, but not limited to, Red Hat Enterprise Linux (RHEL), CentOS and Scientific Linux (SL), Oracle Linux (OL).
 
-The yum-epel cookbook takes over management of the default repositoryids shipped with epel-release. It allows attribute manipulation of `epel`, `epel-debuginfo`, `epel-source`, `epel-testing`, `epel-testing-debuginfo`, and `epel-testing-source`.
+The yum-epel cookbook takes over management of the default repositoryids shipped with epel-release.
+
+Below is a table showing which repositoryids we manage that are shipped by default via the epel-release package:
+
+| Repo ID                        | EL 7             | EL 8             |
+| ------------------------------ | :--------------: | :--------------: |
+| epel                           |:heavy_check_mark:|:heavy_check_mark:|
+| epel-debuginfo                 |:heavy_check_mark:|:heavy_check_mark:|
+| epel-modular                   |       :x:        |:heavy_check_mark:|
+| epel-modular-debuginfo         |       :x:        |:heavy_check_mark:|
+| epel-modular-source            |       :x:        |:heavy_check_mark:|
+| epel-playground                |       :x:        |:heavy_check_mark:|
+| epel-playground-debuginfo      |       :x:        |:heavy_check_mark:|
+| epel-playground-source         |       :x:        |:heavy_check_mark:|
+| epel-source                    |:heavy_check_mark:|:heavy_check_mark:|
+| epel-testing                   |:heavy_check_mark:|:heavy_check_mark:|
+| epel-testing-debuginfo         |:heavy_check_mark:|:heavy_check_mark:|
+| epel-testing-modular           |       :x:        |:heavy_check_mark:|
+| epel-testing-modular-debuginfo |       :x:        |:heavy_check_mark:|
+| epel-testing-modular-source    |       :x:        |:heavy_check_mark:|
+| epel-testing-source            |:heavy_check_mark:|:heavy_check_mark:|
 
 ## Requirements
 
@@ -22,100 +42,11 @@ The yum-epel cookbook takes over management of the default repositoryids shipped
 
 ## Attributes
 
-The following attributes are set by default
-
-```ruby
-default['yum-epel']['repos'] = %w(
-  epel
-  epel-debuginfo
-  epel-source
-  epel-testing
-  epel-testing-debuginfo
-  epel-testing-source
-)
-```
-
-```ruby
-default['yum']['epel']['repositoryid'] = 'epel'
-default['yum']['epel']['description'] = 'Extra Packages for Enterprise Linux 7 - $basearch'
-default['yum']['epel']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-5&arch=$basearch'
-default['yum']['epel']['gpgkey'] = 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
-default['yum']['epel']['failovermethod'] = 'priority'
-default['yum']['epel']['gpgcheck'] = true
-default['yum']['epel']['enabled'] = true
-default['yum']['epel']['managed'] = true
-```
-
-```ruby
-default['yum']['epel-debuginfo']['repositoryid'] = 'epel-debuginfo'
-default['yum']['epel-debuginfo']['description'] = 'Extra Packages for Enterprise Linux 7 - $basearch - Debug'
-default['yum']['epel-debuginfo']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=epel-debug-7&arch=$basearch'
-default['yum']['epel-debuginfo']['gpgkey'] = 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
-default['yum']['epel-debuginfo']['failovermethod'] = 'priority'
-default['yum']['epel-debuginfo']['gpgcheck'] = true
-default['yum']['epel-debuginfo']['enabled'] = false
-default['yum']['epel-debuginfo']['managed'] = false
-```
-
-```ruby
-default['yum']['epel-source']['repositoryid'] = 'epel-source'
-default['yum']['epel-source']['description'] = 'Extra Packages for Enterprise Linux 7 - $basearch - Source'
-default['yum']['epel-source']['mirrorlist'] = 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-source-7&arch=$basearch'
-default['yum']['epel-source']['gpgkey'] = 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
-default['yum']['epel-source']['failovermethod'] = 'priority'
-default['yum']['epel-source']['gpgcheck'] = true
-default['yum']['epel-source']['enabled'] = false
-default['yum']['epel-source']['managed'] = false
-```
-
-```ruby
-default['yum']['epel-testing']['repositoryid'] = 'epel-testing'
-default['yum']['epel-testing']['description'] = 'Extra Packages for Enterprise Linux 7 - Testing - $basearch'
-default['yum']['epel-testing']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=testing-epel7&arch=$basearch'
-default['yum']['epel-testing']['gpgkey'] = 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7r'
-default['yum']['epel-testing']['failovermethod'] = 'priority'
-default['yum']['epel-testing']['gpgcheck'] = true
-default['yum']['epel-testing']['enabled'] = false
-default['yum']['epel-testing']['managed'] = false
-```
-
-```ruby
-default['yum']['epel-testing-debuginfo']['repositoryid'] = 'epel-testing-debuginfo'
-default['yum']['epel-testing-debuginfo']['description'] = 'Extra Packages for Enterprise Linux 7 - Testing - $basearch Debug'
-default['yum']['epel-testing-debuginfo']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel7&arch=$basearch'
-default['yum']['epel-testing-debuginfo']['gpgkey'] = 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
-default['yum']['epel-testing-debuginfo']['failovermethod'] = 'priority'
-default['yum']['epel-testing-debuginfo']['gpgcheck'] = true
-default['yum']['epel-testing-debuginfo']['enabled'] = false
-default['yum']['epel-testing-debuginfo']['managed'] = false
-```
-
-```ruby
-default['yum']['epel-testing-source']['repositoryid'] = 'epel-testing-source'
-default['yum']['epel-testing-source']['description'] = 'Extra Packages for Enterprise Linux 7 - Testing - $basearch Source'
-default['yum']['epel-testing-source']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=testing-source-epel7&arch=$basearch'
-default['yum']['epel-testing-source']['gpgkey'] = 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
-default['yum']['epel-testing-source']['failovermethod'] = 'priority'
-default['yum']['epel-testing-source']['gpgcheck'] = true
-default['yum']['epel-testing-source']['enabled'] = false
-default['yum']['epel-testing-source']['managed'] = false
-```
+See individual repository attribute files for defaults.
 
 ## Recipes
 
-- default - Walks through node attributes and feeds a yum_resource
-- parameters. The following is an example a resource generated by the
-- recipe during compilation.
-
-```ruby
-  yum_repository 'epel' do
-    mirrorlist 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-5&arch=$basearch'
-    description 'Extra Packages for Enterprise Linux 5 - $basearch'
-    enabled true
-    gpgcheck true
-    gpgkey 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL'
-  end
-```
+- `yum-epel::default` Generates `yum_repository` configs for the standard EPEL repositories. By default the `epel` repository is enabled.
 
 ## Usage Example
 
