@@ -2,6 +2,17 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## Unreleased
+
+- Remove CentOS 6 / Amazon Linux 201X support/testing
+- Improve InSpec test by using yum.repo resource
+- Fix repo descriptions on Amazon Linux
+- Test all supported repos in new "all" suite
+- Ensure other epel repos are not enabled in default suite
+- Add various modular and playground repos for EL8
+- Update README
+- Cleanup metadata.rb formatting
+
 ## 3.3.0 (2018-10-09)
 
 - Fix cookbook to work on all releases of Amazon Linux 2

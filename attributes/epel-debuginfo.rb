@@ -1,15 +1,11 @@
 default['yum']['epel-debuginfo']['repositoryid'] = 'epel-debuginfo'
-default['yum']['epel-debuginfo']['description'] = "Extra Packages for #{node['platform_version'].to_i} - $basearch - Debug"
 
 if platform?('amazon')
-  if node['platform_version'].to_i > 2010
-    default['yum']['epel-debuginfo']['mirrorlist'] = 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-6&arch=$basearch'
-    default['yum']['epel-debuginfo']['gpgkey'] = 'https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
-  else
-    default['yum']['epel-debuginfo']['mirrorlist'] = 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-7&arch=$basearch'
-    default['yum']['epel-debuginfo']['gpgkey'] = 'https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
-  end
+  default['yum']['epel-debuginfo']['description'] = 'Extra Packages for 7 - $basearch - Debug'
+  default['yum']['epel-debuginfo']['mirrorlist'] = 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-7&arch=$basearch'
+  default['yum']['epel-debuginfo']['gpgkey'] = 'https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
 else
+  default['yum']['epel-debuginfo']['description'] = "Extra Packages for #{node['platform_version'].to_i} - $basearch - Debug"
   default['yum']['epel-debuginfo']['mirrorlist'] = "https://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-#{node['platform_version'].to_i}&arch=$basearch"
   default['yum']['epel-debuginfo']['gpgkey'] = "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-#{node['platform_version'].to_i}"
 end

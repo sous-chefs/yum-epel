@@ -32,16 +32,6 @@ describe 'yum-epel::default' do
   # That equals release7 on RHEL 7 and EPEL repo doesn't return anything for that so please
   # leave node['platform_version'].to_i
 
-  context 'on RHEL 6' do
-    let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'centos', version: '6').converge('yum-epel::default')
-    end
-
-    it 'creates epel repo with proper version string' do
-      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch')
-    end
-  end
-
   context 'on RHEL 7' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(platform: 'centos', version: '7').converge('yum-epel::default')
@@ -49,16 +39,6 @@ describe 'yum-epel::default' do
 
     it 'creates epel repo with proper version string' do
       expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-7&arch=$basearch')
-    end
-  end
-
-  context 'on Amazon 2018' do
-    let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'amazon', version: '2018.03').converge('yum-epel::default')
-    end
-
-    it 'creates epel repo with proper version string' do
-      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch')
     end
   end
 
