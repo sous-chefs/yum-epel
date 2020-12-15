@@ -2,16 +2,20 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
-## Unreleased
+## 4.0.0 (2020-12-15)
 
-- Remove CentOS 6 / Amazon Linux 201X support/testing
-- Improve InSpec test by using yum.repo resource
-- Fix repo descriptions on Amazon Linux
-- Test all supported repos in new "all" suite
-- Ensure other epel repos are not enabled in default suite
-- Add various modular and playground repos for EL8
-- Update README
-- Cleanup metadata.rb formatting
+- Cookstyle fixes - [@tas50](https://github.com/tas50)
+- Switch all http URLs to HTTPS URLs - [@damacus](https://github.com/damacus)
+- Switch gpgkey urls - [@knightorc](https://github.com/knightorc)
+- Require Chef 12.15+ - [@tas50](https://github.com/tas50)
+- Remove CentOS 6 / Amazon Linux 201X support/testing - [@ramereth](https://github.com/ramereth)
+- Improve InSpec test by using yum.repo resource - [@ramereth](https://github.com/ramereth)
+- Fix repo descriptions on Amazon Linux - [@ramereth](https://github.com/ramereth)
+- Test all supported repos in new "all" suite - [@ramereth](https://github.com/ramereth)
+- Ensure other epel repos are not enabled in default suite - [@ramereth](https://github.com/ramereth)
+- Add various modular and playground repos for EL8 - [@ramereth](https://github.com/ramereth)
+- Update README - [@ramereth](https://github.com/ramereth)
+- Cleanup metadata.rb formatting - [@ramereth](https://github.com/ramereth)
 
 ## 3.3.0 (2018-10-09)
 
