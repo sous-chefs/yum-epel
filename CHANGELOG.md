@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## 4.0.1 (2021-01-04)
+
+- Return empty array on non-yum systems - [@ramereth](https://github.com/ramereth)
+
 ## 4.0.0 (2020-12-15)
 
 - Cookstyle fixes - [@tas50](https://github.com/tas50)
