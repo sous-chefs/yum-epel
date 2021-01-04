@@ -51,4 +51,13 @@ describe 'yum-epel::default' do
       expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-7&arch=$basearch')
     end
   end
+
+  context 'on debian' do
+    let(:chef_run) do
+      ChefSpec::SoloRunner.new(platform: 'debian', version: '10').converge('yum-epel::default')
+    end
+    it do
+      expect(chef_run).to_not create_yum_repository('epel')
+    end
+  end
 end
