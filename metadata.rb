@@ -1,13 +1,16 @@
 name              'yum-epel'
-maintainer        'Chef Software, Inc.'
-maintainer_email  'cookbooks@chef.io'
+maintainer        'Sous Chefs'
+maintainer_email  'help@sous-chefs.org'
 license           'Apache-2.0'
 description       'Installs and configures the EPEL Yum repository'
 version           '4.0.1'
-source_url        'https://github.com/chef-cookbooks/yum-epel'
-issues_url        'https://github.com/chef-cookbooks/yum-epel/issues'
+source_url        'https://github.com/sous-chefs/yum-epel'
+issues_url        'https://github.com/sous-chefs/yum-epel/issues'
 chef_version      '>= 12.15'
 
-%w(amazon centos oracle redhat scientific zlinux).each do |os|
-  supports os
-end
+supports 'amazon'
+supports 'centos'
+supports 'oracle'
+supports 'redhat'
+supports 'scientific'
+supports 'zlinux'
