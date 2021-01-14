@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## Unreleased
+
+- Sous Chefs Adoption
+
 ## 4.0.1 (2021-01-04)
 
 - Return empty array on non-yum systems - [@ramereth](https://github.com/ramereth)
