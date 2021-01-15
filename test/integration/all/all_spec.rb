@@ -1,4 +1,6 @@
 os_release = os.name == 'amazon' ? 7 : os.release.to_i
+infra = os.name == 'oracle' ? '$infra' : 'container'
+content = os.name == 'oracle' ? '$contentdir' : 'centos'
 
 describe yum.repo 'epel' do
   it { should exist }
@@ -40,55 +42,55 @@ if os_release >= 8
   describe yum.repo 'epel-modular' do
     it { should exist }
     it { should be_enabled }
-    its('mirrors') { should cmp 'https://mirrors.fedoraproject.org/metalink?repo=epel-modular-8&arch=x86_64&infra=container&content=centos' }
+    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=epel-modular-8&arch=x86_64&infra=#{infra}&content=#{content}" }
   end
 
   describe yum.repo 'epel-modular-debuginfo' do
     it { should exist }
     it { should be_enabled }
-    its('mirrors') { should cmp 'https://mirrors.fedoraproject.org/metalink?repo=epel-modular-debug-8&arch=x86_64&infra=container&content=centos' }
+    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=epel-modular-debug-8&arch=x86_64&infra=#{infra}&content=#{content}" }
   end
 
   describe yum.repo 'epel-modular-source' do
     it { should exist }
     it { should be_enabled }
-    its('mirrors') { should cmp 'https://mirrors.fedoraproject.org/metalink?repo=epel-modular-source-8&arch=x86_64&infra=container&content=centos' }
+    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=epel-modular-source-8&arch=x86_64&infra=#{infra}&content=#{content}" }
   end
 
   describe yum.repo 'epel-playground' do
     it { should exist }
     it { should be_enabled }
-    its('mirrors') { should cmp 'https://mirrors.fedoraproject.org/metalink?repo=playground-epel8&arch=x86_64&infra=container&content=centos' }
+    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=playground-epel8&arch=x86_64&infra=#{infra}&content=#{content}" }
   end
 
   describe yum.repo 'epel-playground-debuginfo' do
     it { should exist }
     it { should be_enabled }
-    its('mirrors') { should cmp 'https://mirrors.fedoraproject.org/metalink?repo=playground-debug-epel8&arch=x86_64&infra=container&content=centos' }
+    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=playground-debug-epel8&arch=x86_64&infra=#{infra}&content=#{content}" }
   end
 
   describe yum.repo 'epel-playground-source' do
     it { should exist }
     it { should be_enabled }
-    its('mirrors') { should cmp 'https://mirrors.fedoraproject.org/metalink?repo=playground-source-epel8&arch=x86_64&infra=container&content=centos' }
+    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=playground-source-epel8&arch=x86_64&infra=#{infra}&content=#{content}" }
   end
 
   describe yum.repo 'epel-testing-modular' do
     it { should exist }
     it { should be_enabled }
-    its('mirrors') { should cmp 'https://mirrors.fedoraproject.org/metalink?repo=testing-modular-epel8&arch=x86_64&infra=container&content=centos' }
+    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=testing-modular-epel8&arch=x86_64&infra=#{infra}&content=#{content}" }
   end
 
   describe yum.repo 'epel-testing-modular-debuginfo' do
     it { should exist }
     it { should be_enabled }
-    its('mirrors') { should cmp 'https://mirrors.fedoraproject.org/metalink?repo=testing-modular-debug-epel8&arch=x86_64&infra=container&content=centos' }
+    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=testing-modular-debug-epel8&arch=x86_64&infra=#{infra}&content=#{content}" }
   end
 
   describe yum.repo 'epel-testing-modular-source' do
     it { should exist }
     it { should be_enabled }
-    its('mirrors') { should cmp 'https://mirrors.fedoraproject.org/metalink?repo=testing-modular-source-epel8&arch=x86_64&infra=container&content=centos' }
+    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=testing-modular-source-epel8&arch=x86_64&infra=#{infra}&content=#{content}" }
   end
 else
   %w(
