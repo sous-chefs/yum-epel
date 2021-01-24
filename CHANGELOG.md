@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
-## Unreleased
+## 4.1.1 - *2021-01-24*
 
 - Fix support for Oracle Linux
 
