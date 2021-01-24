@@ -1,6 +1,6 @@
 default['yum-epel']['repos'] =
   value_for_platform(
-    %w(redhat centos) => {
+    %w(redhat centos oracle) => {
       '>= 8.0' =>
         %w(
           epel
