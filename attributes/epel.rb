@@ -18,7 +18,6 @@ else
     default['yum']['epel']['gpgkey'] = "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-#{node['platform_version'].to_i}"
   end
 end
-default['yum']['epel']['failovermethod'] = 'priority'
 default['yum']['epel']['enabled'] = true
 default['yum']['epel']['managed'] = true
 default['yum']['epel']['make_cache'] = true
