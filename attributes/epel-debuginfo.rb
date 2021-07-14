@@ -9,7 +9,6 @@ else
   default['yum']['epel-debuginfo']['mirrorlist'] = "https://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-#{node['platform_version'].to_i}&arch=$basearch"
   default['yum']['epel-debuginfo']['gpgkey'] = "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-#{node['platform_version'].to_i}"
 end
-default['yum']['epel-debuginfo']['failovermethod'] = 'priority'
 default['yum']['epel-debuginfo']['gpgcheck'] = true
 default['yum']['epel-debuginfo']['enabled'] = false
 default['yum']['epel-debuginfo']['managed'] = false
