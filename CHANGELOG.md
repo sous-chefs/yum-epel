@@ -4,11 +4,15 @@ This file is used to list changes made in each version of the yum-epel cookbook.
 
 ## Unreleased
 
+- Standardise files with files in sous-chefs/repo-management
+
 ## 4.1.3 - *2021-07-14*
 
 - Remove deprecated `failoverprorioty` setting
 
 ## 4.1.2 - *2021-06-01*
+
+- Standardise files with files in sous-chefs/repo-management
 
 ## 4.1.1 - *2021-01-24*
 
