@@ -6,29 +6,35 @@
 [![OpenCollective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Extra Packages for Enterprise Linux (or EPEL) is a Fedora Special Interest Group that creates, maintains, and manages a high quality set of additional packages for Enterprise Linux, including, but not limited to, Red Hat Enterprise Linux (RHEL), CentOS and Scientific Linux (SL), Oracle Linux (OL).
+Extra Packages for Enterprise Linux (or EPEL) is a Fedora Special Interest Group that creates, maintains, and manages a high quality set of additional packages for Enterprise Linux, including, but not limited to, Red Hat Enterprise Linux (RHEL), CentOS , CentOS Stream and Scientific Linux (SL), Oracle Linux (OL).
 
 The yum-epel cookbook takes over management of the default repositoryids shipped with epel-release.
 
 Below is a table showing which repositoryids we manage that are shipped by default via the epel-release package:
 
-| Repo ID                        | EL 7             | EL 8             |
-| ------------------------------ | :--------------: | :--------------: |
-| epel                           |:heavy_check_mark:|:heavy_check_mark:|
-| epel-debuginfo                 |:heavy_check_mark:|:heavy_check_mark:|
-| epel-modular                   |       :x:        |:heavy_check_mark:|
-| epel-modular-debuginfo         |       :x:        |:heavy_check_mark:|
-| epel-modular-source            |       :x:        |:heavy_check_mark:|
-| epel-playground                |       :x:        |:heavy_check_mark:|
-| epel-playground-debuginfo      |       :x:        |:heavy_check_mark:|
-| epel-playground-source         |       :x:        |:heavy_check_mark:|
-| epel-source                    |:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing                   |:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-debuginfo         |:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-modular           |       :x:        |:heavy_check_mark:|
-| epel-testing-modular-debuginfo |       :x:        |:heavy_check_mark:|
-| epel-testing-modular-source    |       :x:        |:heavy_check_mark:|
-| epel-testing-source            |:heavy_check_mark:|:heavy_check_mark:|
+| Repo ID                        | EL 7             | EL 8             | CentOS Stream 8  |
+| ------------------------------ | :--------------: | :--------------: | :--------------: |
+| epel                           |:heavy_check_mark:|:heavy_check_mark:|       :x:        |
+| epel-debuginfo                 |:heavy_check_mark:|:heavy_check_mark:|       :x:        |
+| epel-modular                   |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-modular-debuginfo         |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-modular-source            |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-next                      |       :x:        |       :x:        |:heavy_check_mark:|
+| epel-next-debuginfo            |       :x:        |       :x:        |:heavy_check_mark:|
+| epel-next-source               |       :x:        |       :x:        |:heavy_check_mark:|
+| epel-next-testing              |       :x:        |       :x:        |:heavy_check_mark:|
+| epel-next-testing-debug        |       :x:        |       :x:        |:heavy_check_mark:|
+| epel-next-testing-source       |       :x:        |       :x:        |:heavy_check_mark:|
+| epel-playground                |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-playground-debuginfo      |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-playground-source         |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-source                    |:heavy_check_mark:|:heavy_check_mark:|       :x:        |
+| epel-testing                   |:heavy_check_mark:|:heavy_check_mark:|       :x:        |
+| epel-testing-debuginfo         |:heavy_check_mark:|:heavy_check_mark:|       :x:        |
+| epel-testing-modular           |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-testing-modular-debuginfo |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-testing-modular-source    |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-testing-source            |:heavy_check_mark:|:heavy_check_mark:|       :x:        |
 
 ## Requirements
 
@@ -54,7 +60,7 @@ See individual repository attribute files for defaults.
 
 ## Recipes
 
-- `yum-epel::default` Generates `yum_repository` configs for the standard EPEL repositories. By default the `epel` repository is enabled.
+- `yum-epel::default` Generates `yum_repository` configs for the standard EPEL repositories. By default the `epel` repository is enabled unless on CentOS Stream. By default the `epel-next` repository is enabled on CentOS Stream and the `epel` repository is disabled.
 
 ## Usage Example
 

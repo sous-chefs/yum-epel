@@ -43,6 +43,7 @@ jobs:
           - 'amazonlinux-2'
           - 'centos-7'
           - 'centos-8'
+          - 'centos-stream-8'
           - 'oraclelinux-7'
           - 'oraclelinux-8'
         suite:
