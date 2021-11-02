@@ -14,8 +14,8 @@ Below is a table showing which repositoryids we manage that are shipped by defau
 
 | Repo ID                        | EL 7             | EL 8             | CentOS Stream 8  |
 | ------------------------------ | :--------------: | :--------------: | :--------------: |
-| epel                           |:heavy_check_mark:|:heavy_check_mark:|       :x:        |
-| epel-debuginfo                 |:heavy_check_mark:|:heavy_check_mark:|       :x:        |
+| epel                           |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| epel-debuginfo                 |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 | epel-modular                   |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
 | epel-modular-debuginfo         |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
 | epel-modular-source            |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
@@ -28,13 +28,13 @@ Below is a table showing which repositoryids we manage that are shipped by defau
 | epel-playground                |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
 | epel-playground-debuginfo      |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
 | epel-playground-source         |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-source                    |:heavy_check_mark:|:heavy_check_mark:|       :x:        |
-| epel-testing                   |:heavy_check_mark:|:heavy_check_mark:|       :x:        |
-| epel-testing-debuginfo         |:heavy_check_mark:|:heavy_check_mark:|       :x:        |
+| epel-source                    |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| epel-testing                   |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| epel-testing-debuginfo         |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 | epel-testing-modular           |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
 | epel-testing-modular-debuginfo |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
 | epel-testing-modular-source    |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-source            |:heavy_check_mark:|:heavy_check_mark:|       :x:        |
+| epel-testing-source            |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 
 ## Requirements
 
@@ -60,7 +60,7 @@ See individual repository attribute files for defaults.
 
 ## Recipes
 
-- `yum-epel::default` Generates `yum_repository` configs for the standard EPEL repositories. By default the `epel` repository is enabled unless on CentOS Stream. By default the `epel-next` repository is enabled on CentOS Stream and the `epel` repository is disabled.
+- `yum-epel::default` Generates `yum_repository` configs for the standard EPEL repositories. By default the `epel` repository is enabled. For CentOS Stream, the [epel-next](https://docs.fedoraproject.org/en-US/epel/#what_is_epel_next) repository is also enabled.
 
 ## Usage Example
 

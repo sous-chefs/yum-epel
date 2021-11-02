@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the yum-epel cookbook.
 
 ## Unreleased
 
+- Update documentation for epel on CentOS Stream
+
 ## 4.2.1 - *2021-11-02*
 
 - Add epel and epel-debuginfo repos by default for CentOS Streams
