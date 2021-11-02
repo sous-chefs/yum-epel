@@ -64,7 +64,7 @@ describe 'yum-epel::default' do
     end
 
     it do
-      expect(chef_run).to_not create_yum_repository('epel')
+      expect(chef_run).to create_yum_repository('epel')
     end
   end
 
