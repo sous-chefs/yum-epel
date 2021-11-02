@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## Unreleased
+
 ## 4.2.0 - *2021-11-02*
 
 - Add support for CentOS Stream 8
