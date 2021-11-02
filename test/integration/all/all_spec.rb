@@ -10,42 +10,40 @@ infra =
   end
 content = os.name == 'oracle' ? '$contentdir' : 'centos'
 
-unless stream
-  describe yum.repo 'epel' do
-    it { should exist }
-    it { should be_enabled }
-    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=epel-#{os_release}&arch=x86_64" }
-  end
+describe yum.repo 'epel' do
+  it { should exist }
+  it { should be_enabled }
+  its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=epel-#{os_release}&arch=x86_64" }
+end
 
-  describe yum.repo 'epel-debuginfo' do
-    it { should exist }
-    it { should be_enabled }
-    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-#{os_release}&arch=x86_64" }
-  end
+describe yum.repo 'epel-debuginfo' do
+  it { should exist }
+  it { should be_enabled }
+  its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-#{os_release}&arch=x86_64" }
+end
 
-  describe yum.repo 'epel-source' do
-    it { should exist }
-    it { should be_enabled }
-    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=epel-source-#{os_release}&arch=x86_64" }
-  end
+describe yum.repo 'epel-source' do
+  it { should exist }
+  it { should be_enabled }
+  its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=epel-source-#{os_release}&arch=x86_64" }
+end
 
-  describe yum.repo 'epel-testing' do
-    it { should exist }
-    it { should be_enabled }
-    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel#{os_release}&arch=x86_64" }
-  end
+describe yum.repo 'epel-testing' do
+  it { should exist }
+  it { should be_enabled }
+  its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel#{os_release}&arch=x86_64" }
+end
 
-  describe yum.repo 'epel-testing-debuginfo' do
-    it { should exist }
-    it { should be_enabled }
-    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=testing-debug-epel#{os_release}&arch=x86_64" }
-  end
+describe yum.repo 'epel-testing-debuginfo' do
+  it { should exist }
+  it { should be_enabled }
+  its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=testing-debug-epel#{os_release}&arch=x86_64" }
+end
 
-  describe yum.repo 'epel-testing-source' do
-    it { should exist }
-    it { should be_enabled }
-    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=testing-source-epel#{os_release}&arch=x86_64" }
-  end
+describe yum.repo 'epel-testing-source' do
+  it { should exist }
+  it { should be_enabled }
+  its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=testing-source-epel#{os_release}&arch=x86_64" }
 end
 
 if os_release >= 8
@@ -138,20 +136,6 @@ if os_release >= 8
       it { should exist }
       it { should be_enabled }
       its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=testing-source-epel#{os_release}&arch=x86_64" }
-    end
-
-    %w(
-      epel
-      epel-debuginfo
-      epel-source
-      epel-testing
-      epel-testing-debuginfo
-      epel-testing-source
-    ).each do |repo|
-      describe yum.repo repo do
-        it { should_not exist }
-        it { should_not be_enabled }
-      end
     end
   end
 else
