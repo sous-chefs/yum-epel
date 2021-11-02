@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the yum-epel cookbook.
 
 ## Unreleased
 
+- Add support for CentOS Stream 8
+
 ## 4.1.4 - *2021-08-30*
 
 - Standardise files with files in sous-chefs/repo-management
