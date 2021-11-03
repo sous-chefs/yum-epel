@@ -1,7 +1,7 @@
 module YumEpel
   module Cookbook
     module Helpers
-      def centos_8_repos
+      def epel_8_repos
         repos = %w(
           epel
           epel-debuginfo
