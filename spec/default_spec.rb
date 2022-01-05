@@ -77,7 +77,7 @@ describe 'yum-epel::default' do
       expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-8&arch=$basearch')
     end
   end
-  
+
   context 'on Amazon 2' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(platform: 'amazon', version: '2').converge('yum-epel::default')
