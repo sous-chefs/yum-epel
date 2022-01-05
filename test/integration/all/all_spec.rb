@@ -8,7 +8,12 @@ infra =
   else
     'container'
   end
-content = os.name == 'oracle' ? '$contentdir' : 'centos'
+
+content = case os.name
+          when 'oracle' then '$contentdir'
+          when 'rocky'  then 'pub/rocky'
+          else 'centos'
+          end
 
 describe yum.repo 'epel' do
   it { should exist }
