@@ -16,6 +16,7 @@ platforms:
   - name: centos-stream-8
   - name: oraclelinux-7
   - name: oraclelinux-8
+  - name: rockylinux-8
 
 suites:
   - name: default
