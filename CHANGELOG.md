@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the yum-epel cookbook.
 
 ## Unreleased
 
+- Allow the cookbook to install EPEL on Rocky Linux
+
 ## 4.2.3 - *2021-11-03*
 
 - Rename helper method to `epel_8_repos` to not conflict with yum-centos
