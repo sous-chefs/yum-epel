@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## Unreleased
+
 ## 4.3.0 - *2022-01-07*
 
 - Allow the cookbook to install EPEL on Rocky Linux
