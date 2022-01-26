@@ -1,6 +1,6 @@
 default['yum-epel']['repos'] =
   value_for_platform(
-    %w(redhat centos oracle rocky) => {
+    %w(almalinux redhat centos oracle rocky) => {
       '>= 8.0' => epel_8_repos,
       '~> 7.0' =>
         %w(
