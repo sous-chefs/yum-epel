@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
-## Unreleased
+## 4.4.0 - *2022-01-27*
 
 - Allow the cookbook to install EPEL on Alma Linux
 - Remove testing for CentOS 8 (use Stream instead)
