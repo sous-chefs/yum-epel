@@ -3,6 +3,8 @@ stream = file('/etc/os-release').content.match?('Stream')
 infra =
   if os.name == 'oracle'
     '$infra'
+  elsif os.name == 'almalinux'
+    'stock'
   elsif stream
     'stock'
   else
@@ -12,6 +14,7 @@ infra =
 content = case os.name
           when 'oracle' then '$contentdir'
           when 'rocky'  then 'pub/rocky'
+          when 'almalinux' then 'almalinux'
           else 'centos'
           end
 

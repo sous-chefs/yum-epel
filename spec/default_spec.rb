@@ -68,6 +68,16 @@ describe 'yum-epel::default' do
     end
   end
 
+  context 'on Alma Linux 8' do
+    let(:chef_run) do
+      ChefSpec::SoloRunner.new(platform: 'almalinux', version: '8').converge('yum-epel::default')
+    end
+
+    it do
+      expect(chef_run).to create_yum_repository('epel').with(mirrorlist: 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-8&arch=$basearch')
+    end
+  end
+
   context 'on Rocky Linux 8' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(platform: 'rocky', version: '8').converge('yum-epel::default')
