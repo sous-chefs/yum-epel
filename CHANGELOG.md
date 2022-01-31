@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the yum-epel cookbook.
 
 ## Unreleased
 
+- Remove epel-playground per upstream removal
+
 ## 4.4.1 - *2022-02-02*
 
 - Remove delivery and move to calling RSpec directly via a reusable workflow

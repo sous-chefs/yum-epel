@@ -8,9 +8,6 @@ module YumEpel
           epel-modular
           epel-modular-debuginfo
           epel-modular-source
-          epel-playground
-          epel-playground-debuginfo
-          epel-playground-source
           epel-source
           epel-testing
           epel-testing-debuginfo

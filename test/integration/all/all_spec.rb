@@ -73,24 +73,6 @@ if os_release >= 8
     its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=epel-modular-source-8&arch=x86_64&infra=#{infra}&content=#{content}" }
   end
 
-  describe yum.repo 'epel-playground' do
-    it { should exist }
-    it { should be_enabled }
-    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=playground-epel8&arch=x86_64&infra=#{infra}&content=#{content}" }
-  end
-
-  describe yum.repo 'epel-playground-debuginfo' do
-    it { should exist }
-    it { should be_enabled }
-    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=playground-debug-epel8&arch=x86_64&infra=#{infra}&content=#{content}" }
-  end
-
-  describe yum.repo 'epel-playground-source' do
-    it { should exist }
-    it { should be_enabled }
-    its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=playground-source-epel8&arch=x86_64&infra=#{infra}&content=#{content}" }
-  end
-
   describe yum.repo 'epel-testing-modular' do
     it { should exist }
     it { should be_enabled }
@@ -151,9 +133,6 @@ else
     epel-modular
     epel-modular-debuginfo
     epel-modular-source
-    epel-playground
-    epel-playground-debuginfo
-    epel-playground-source
     epel-testing-modular
     epel-testing-modular-debuginfo
     epel-testing-modular-source
