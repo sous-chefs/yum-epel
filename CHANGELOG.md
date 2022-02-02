@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the yum-epel cookbook.
 
 ## Unreleased
 
+- Remove delivery and move to calling RSpec directly via a reusable workflow
+
 ## 4.4.0 - *2022-01-27*
 
 - Allow the cookbook to install EPEL on Alma Linux
