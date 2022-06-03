@@ -57,15 +57,6 @@ suites:
         epel-next-testing-source:
           managed: true
           enabled: true
-        epel-playground:
-          managed: true
-          enabled: true
-        epel-playground-debuginfo:
-          managed: true
-          enabled: true
-        epel-playground-source:
-          managed: true
-          enabled: true
         epel-source:
           managed: true
           enabled: true

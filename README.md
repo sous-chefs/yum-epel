@@ -25,9 +25,6 @@ Below is a table showing which repositoryids we manage that are shipped by defau
 | epel-next-testing              |       :x:        |       :x:        |:heavy_check_mark:|
 | epel-next-testing-debug        |       :x:        |       :x:        |:heavy_check_mark:|
 | epel-next-testing-source       |       :x:        |       :x:        |:heavy_check_mark:|
-| epel-playground                |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-playground-debuginfo      |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-playground-source         |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
 | epel-source                    |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 | epel-testing                   |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 | epel-testing-debuginfo         |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
