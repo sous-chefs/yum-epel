@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
-## Unreleased
+## 4.5.0 - *2022-06-03*
 
 - Remove epel-playground per upstream removal
 
