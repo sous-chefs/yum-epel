@@ -5,15 +5,9 @@ module YumEpel
         repos = %w(
           epel
           epel-debuginfo
-          epel-modular
-          epel-modular-debuginfo
-          epel-modular-source
           epel-source
           epel-testing
           epel-testing-debuginfo
-          epel-testing-modular
-          epel-testing-modular-debuginfo
-          epel-testing-modular-source
           epel-testing-source
         )
 

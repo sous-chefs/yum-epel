@@ -16,9 +16,6 @@ Below is a table showing which repositoryids we manage that are shipped by defau
 | ------------------------------ | :--------------: | :--------------: | :--------------: |
 | epel                           |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 | epel-debuginfo                 |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| epel-modular                   |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-modular-debuginfo         |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-modular-source            |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
 | epel-next                      |       :x:        |       :x:        |:heavy_check_mark:|
 | epel-next-debuginfo            |       :x:        |       :x:        |:heavy_check_mark:|
 | epel-next-source               |       :x:        |       :x:        |:heavy_check_mark:|
@@ -28,9 +25,6 @@ Below is a table showing which repositoryids we manage that are shipped by defau
 | epel-source                    |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 | epel-testing                   |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 | epel-testing-debuginfo         |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-modular           |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-modular-debuginfo |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-modular-source    |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
 | epel-testing-source            |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 
 ## Requirements
