@@ -5,6 +5,7 @@ This file is used to list changes made in each version of the yum-epel cookbook.
 ## Unreleased
 
 - Remove EPEL Modular
+- Add support for Amazon Linux 2023
 
 ## 4.5.1 - *2023-04-13*
 

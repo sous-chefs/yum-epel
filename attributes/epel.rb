@@ -9,9 +9,16 @@ when 's390x'
   default['yum']['epel']['gpgkey'] = 'https://kojipkgs.fedoraproject.org/rhel/rc/7/Server/s390x/os/RPM-GPG-KEY-redhat-release'
 else
   if platform?('amazon')
-    default['yum']['epel']['description'] = 'Extra Packages for 7 - $basearch'
-    default['yum']['epel']['mirrorlist'] = 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-7&arch=$basearch'
-    default['yum']['epel']['gpgkey'] = 'https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
+    case node['platform_version'].to_i
+    when 2023
+      default['yum']['epel']['description'] = 'Extra Packages for 9 - $basearch'
+      default['yum']['epel']['mirrorlist'] = 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-9&arch=$basearch'
+      default['yum']['epel']['gpgkey'] = 'https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-9'
+    when 2
+      default['yum']['epel']['description'] = 'Extra Packages for 7 - $basearch'
+      default['yum']['epel']['mirrorlist'] = 'https://mirrors.fedoraproject.org/mirrorlist?repo=epel-7&arch=$basearch'
+      default['yum']['epel']['gpgkey'] = 'https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
+    end
   else
     default['yum']['epel']['description'] = "Extra Packages for #{node['platform_version'].to_i} - $basearch"
     default['yum']['epel']['mirrorlist'] = "https://mirrors.fedoraproject.org/mirrorlist?repo=epel-#{node['platform_version'].to_i}&arch=$basearch"

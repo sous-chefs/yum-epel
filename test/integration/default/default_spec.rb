@@ -1,4 +1,4 @@
-os_release = os.name == 'amazon' ? '7' : os.release.to_i
+os_release = os.name == 'amazon' ? '9' : os.release.to_i
 stream = file('/etc/os-release').content.match?('Stream')
 
 describe yum.repo 'epel' do
