@@ -30,6 +30,19 @@ module YumEpel
       def yum_epel_centos_stream?
         respond_to?(:centos_stream_platform?) && centos_stream_platform?
       end
+
+      def yum_epel_release
+        if platform?('amazon')
+          case node['platform_version'].to_i
+          when 2023
+            9
+          when 2
+            7
+          end
+        else
+          node['platform_version'].to_i
+        end
+      end
     end
   end
 end
