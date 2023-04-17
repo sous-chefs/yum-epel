@@ -57,7 +57,7 @@ See individual repository attribute files for defaults.
 
 To disable the epel repository through a Role or Environment definition
 
-```
+```ruby
 default_attributes(
   :yum => {
     :epel => {
