@@ -12,26 +12,20 @@ The yum-epel cookbook takes over management of the default repositoryids shipped
 
 Below is a table showing which repositoryids we manage that are shipped by default via the epel-release package:
 
-| Repo ID                        | EL 7             | EL 8             | CentOS Stream 8  |
-| ------------------------------ | :--------------: | :--------------: | :--------------: |
-| epel                           |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| epel-debuginfo                 |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| epel-modular                   |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-modular-debuginfo         |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-modular-source            |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-next                      |       :x:        |       :x:        |:heavy_check_mark:|
-| epel-next-debuginfo            |       :x:        |       :x:        |:heavy_check_mark:|
-| epel-next-source               |       :x:        |       :x:        |:heavy_check_mark:|
-| epel-next-testing              |       :x:        |       :x:        |:heavy_check_mark:|
-| epel-next-testing-debug        |       :x:        |       :x:        |:heavy_check_mark:|
-| epel-next-testing-source       |       :x:        |       :x:        |:heavy_check_mark:|
-| epel-source                    |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing                   |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-debuginfo         |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-modular           |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-modular-debuginfo |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-modular-source    |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-source            |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| Repo ID                        | EL 7             | EL 8             | EL 9             | CentOS Stream 8  | CentOS Stream 9  |
+| ------------------------------ | :--------------: | :--------------: | :--------------: | :--------------: | :--------------: |
+| epel                           |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| epel-debuginfo                 |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| epel-next                      |       :x:        |       :x:        |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-next-debuginfo            |       :x:        |       :x:        |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-next-source               |       :x:        |       :x:        |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-next-testing              |       :x:        |       :x:        |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-next-testing-debug        |       :x:        |       :x:        |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-next-testing-source       |       :x:        |       :x:        |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
+| epel-source                    |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| epel-testing                   |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| epel-testing-debuginfo         |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| epel-testing-source            |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 
 ## Requirements
 
@@ -63,7 +57,7 @@ See individual repository attribute files for defaults.
 
 To disable the epel repository through a Role or Environment definition
 
-```
+```ruby
 default_attributes(
   :yum => {
     :epel => {

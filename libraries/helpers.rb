@@ -1,19 +1,13 @@
 module YumEpel
   module Cookbook
     module Helpers
-      def epel_8_repos
+      def epel_repos
         repos = %w(
           epel
           epel-debuginfo
-          epel-modular
-          epel-modular-debuginfo
-          epel-modular-source
           epel-source
           epel-testing
           epel-testing-debuginfo
-          epel-testing-modular
-          epel-testing-modular-debuginfo
-          epel-testing-modular-source
           epel-testing-source
         )
 
@@ -35,6 +29,19 @@ module YumEpel
 
       def yum_epel_centos_stream?
         respond_to?(:centos_stream_platform?) && centos_stream_platform?
+      end
+
+      def yum_epel_release
+        if platform?('amazon')
+          case node['platform_version'].to_i
+          when 2023
+            9
+          when 2
+            7
+          end
+        else
+          node['platform_version'].to_i
+        end
       end
     end
   end
