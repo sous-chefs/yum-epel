@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## Unreleased
+
 ## 5.0.0 - *2023-04-17*
 
 - Remove EPEL Modular
