@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the yum-epel cookbook.
 
 ## Unreleased
 
+Standardise files with files in sous-chefs/repo-management
+
 ## 5.0.0 - *2023-04-17*
 
 - Remove EPEL Modular
