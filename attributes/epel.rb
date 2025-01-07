@@ -14,6 +14,16 @@ else
     "https://mirrors.fedoraproject.org/mirrorlist?repo=epel-#{yum_epel_release}&arch=$basearch"
   default['yum']['epel']['gpgkey'] = "https://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-#{yum_epel_release}"
 end
-default['yum']['epel']['enabled'] = true
+default['yum']['epel']['enabled'] = value_for_platform(
+  'amazon' => {
+    '>= 2023' => false,
+  },
+  'default' => true
+)
 default['yum']['epel']['managed'] = true
-default['yum']['epel']['make_cache'] = true
+default['yum']['epel']['make_cache'] = value_for_platform(
+  'amazon' => {
+    '>= 2023' => false,
+  },
+  'default' => true
+)
