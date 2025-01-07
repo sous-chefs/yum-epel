@@ -13,6 +13,7 @@ default['yum-epel']['repos'] =
         ),
     },
     'amazon' => {
+      '>= 2023' => [],
       'default' =>
         %w(
           epel
