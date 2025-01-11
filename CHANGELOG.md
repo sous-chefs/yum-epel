@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the yum-epel cookbook.
 
 ## Unreleased
 
+- Disable EPEL on Amazon Linux 2023 as it isn't officially supported
+
 ## 5.0.8 - *2024-05-02*
 
 ## 5.0.7 - *2024-05-02*
