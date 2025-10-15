@@ -11,16 +11,7 @@ module YumEpel
           epel-testing-source
         )
 
-        repos.concat(
-          %w(
-            epel-next
-            epel-next-debuginfo
-            epel-next-source
-            epel-next-testing
-            epel-next-testing-debuginfo
-            epel-next-testing-source
-          )
-        ) if yum_epel_centos_stream?
+        repos.push('epel-next', 'epel-next-debuginfo', 'epel-next-source', 'epel-next-testing', 'epel-next-testing-debuginfo', 'epel-next-testing-source') if yum_epel_centos_stream?
 
         repos
       end
