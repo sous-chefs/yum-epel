@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## [5.0.10](https://github.com/sous-chefs/yum-epel/compare/5.0.9...v5.0.10) (2025-10-16)
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#109](https://github.com/sous-chefs/yum-epel/issues/109)) ([e7218fc](https://github.com/sous-chefs/yum-epel/commit/e7218fc0295780239295f755c7ac66d77b4b03a1))
+
 ## 5.0.1 - *2023-06-08*
 
 Standardise files with files in sous-chefs/repo-management
