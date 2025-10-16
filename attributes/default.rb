@@ -22,7 +22,7 @@ default['yum-epel']['repos'] =
           epel-testing-debuginfo
           epel-testing-source
         ),
-      },
+    },
     # No-op on non-yum systems
     'default' => []
   )
