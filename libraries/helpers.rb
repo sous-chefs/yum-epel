@@ -131,10 +131,12 @@ module YumEpel
         when 'epel-source'
           "epel-source-#{yum_epel_release}"
         when 'epel-testing'
-          "testing-epel#{yum_epel_release}"
+          yum_epel_release >= 10 ? "epel-z-testing-#{yum_epel_release}" : "testing-epel#{yum_epel_release}"
         when 'epel-testing-debuginfo'
-          "testing-debug-epel#{yum_epel_release}"
-        when 'epel-testing-source', 'epel-next-testing-source'
+          yum_epel_release >= 10 ? "epel-z-testing-debug-#{yum_epel_release}" : "testing-debug-epel#{yum_epel_release}"
+        when 'epel-testing-source'
+          yum_epel_release >= 10 ? "epel-z-testing-source-#{yum_epel_release}" : "testing-source-epel#{yum_epel_release}"
+        when 'epel-next-testing-source'
           "testing-source-epel#{yum_epel_release}"
         when 'epel-next'
           "epel-next-#{yum_epel_release}"

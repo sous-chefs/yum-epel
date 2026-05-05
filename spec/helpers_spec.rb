@@ -76,5 +76,17 @@ describe YumEpel::Cookbook::Helpers do
     it 'preserves the legacy testing source URL pattern' do
       expect(helper.epel_repository_defaults('epel-testing-source')[:mirrorlist]).to eq('https://mirrors.fedoraproject.org/mirrorlist?repo=testing-source-epel9&arch=$basearch')
     end
+
+    it 'uses the EPEL 10 minor stream testing mirrorlist URL pattern' do
+      helper.node = helper.node.merge(
+        'os_release' => { 'name' => 'CentOS Stream' },
+        'platform' => 'centos',
+        'platform_version' => '10'
+      )
+
+      expect(helper.epel_repository_defaults('epel-testing')[:mirrorlist]).to eq('https://mirrors.fedoraproject.org/mirrorlist?repo=epel-z-testing-10&arch=$basearch')
+      expect(helper.epel_repository_defaults('epel-testing-debuginfo')[:mirrorlist]).to eq('https://mirrors.fedoraproject.org/mirrorlist?repo=epel-z-testing-debug-10&arch=$basearch')
+      expect(helper.epel_repository_defaults('epel-testing-source')[:mirrorlist]).to eq('https://mirrors.fedoraproject.org/mirrorlist?repo=epel-z-testing-source-10&arch=$basearch')
+    end
   end
 end
