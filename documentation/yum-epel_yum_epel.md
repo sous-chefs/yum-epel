@@ -11,13 +11,14 @@ Manages the platform's default set of EPEL repositories by declaring `yum_epel_r
 
 ## Properties
 
-| Property                | Type           | Default     | Description                                      |
-|-------------------------|----------------|-------------|--------------------------------------------------|
-| `cleanup_stock_files`   | true, false    | `true`      | Removes stock `epel-release` repo files before managing repositories |
-| `disabled_repositories` | Array          | `[]`        | Repository IDs to create disabled                |
-| `enabled_repositories`  | Array, Symbol  | `:default`  | Repository IDs to create enabled, or `:all`      |
-| `repositories`          | Array, Symbol  | `:default`  | Repository IDs to manage, or `:all`              |
-| `repository_options`    | Hash           | `{}`        | Per-repository `yum_repository` option overrides |
+* `cleanup_stock_files` - Removes stock `epel-release` repo files before
+  managing repositories. Defaults to `true`.
+* `disabled_repositories` - Repository IDs to create disabled. Defaults to `[]`.
+* `enabled_repositories` - Repository IDs to create enabled, or `:all`. Defaults
+  to `:default`.
+* `repositories` - Repository IDs to manage, or `:all`. Defaults to `:default`.
+* `repository_options` - Per-repository `yum_repository` option overrides.
+  Defaults to `{}`.
 
 ## Examples
 

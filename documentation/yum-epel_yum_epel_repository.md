@@ -4,26 +4,26 @@ Manages one EPEL repository using Chef Infra's `yum_repository` resource.
 
 ## Actions
 
-| Action    | Description                                   |
-|-----------|-----------------------------------------------|
-| `:create` | Creates the repository configuration (default) |
-| `:remove` | Removes the repository configuration          |
+* `:create` - Creates the repository configuration. This is the default action.
+* `:remove` - Removes the repository configuration.
 
 ## Properties
 
-| Property       | Type                | Default          | Description                                      |
-|----------------|---------------------|------------------|--------------------------------------------------|
-| `repo_name`    | String              | name property    | EPEL repository ID                               |
-| `baseurl`      | String, nil         | helper default   | Base URL override                                |
-| `description`  | String, nil         | helper default   | Repository description                           |
-| `enabled`      | true, false         | helper default   | Whether the repository is enabled                |
-| `gpgcheck`     | true, false         | helper default   | Whether package GPG checking is enabled          |
-| `gpgkey`       | String, Array, nil  | helper default   | Repository GPG key URL                           |
-| `make_cache`   | true, false         | helper default   | Whether `yum_repository` should build cache      |
-| `mirrorlist`   | String, nil         | helper default   | Fedora mirrorlist URL                            |
-| `options`      | Hash                | `{}`             | Additional `yum_repository` properties           |
-| `repositoryid` | String, nil         | `repo_name`      | Repository ID passed to `yum_repository`         |
-| `sslverify`    | true, false, nil    | helper default   | SSL verification setting                         |
+* `repo_name` - EPEL repository ID. Defaults to the resource name.
+* `baseurl` - Base URL override. Defaults from helper logic.
+* `description` - Repository description. Defaults from helper logic.
+* `enabled` - Whether the repository is enabled. Defaults from helper logic.
+* `gpgcheck` - Whether package GPG checking is enabled. Defaults from helper
+  logic.
+* `gpgkey` - Repository GPG key URL. Accepts a string, array, or nil. Defaults
+  from helper logic.
+* `make_cache` - Whether `yum_repository` should build cache. Defaults from
+  helper logic.
+* `mirrorlist` - Fedora mirrorlist URL. Defaults from helper logic.
+* `options` - Additional `yum_repository` properties. Defaults to `{}`.
+* `repositoryid` - Repository ID passed to `yum_repository`. Defaults to
+  `repo_name`.
+* `sslverify` - SSL verification setting. Defaults from helper logic.
 
 ## Examples
 

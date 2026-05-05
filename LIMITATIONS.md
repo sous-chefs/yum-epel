@@ -31,9 +31,9 @@ This cookbook configures repositories only. It does not build EPEL packages from
 
 ## Sources
 
-* Fedora EPEL branches: https://tdawson.fedorapeople.org/epel-docs/public/epel/branches/
-* Fedora epel-release package overview: https://packages.fedoraproject.org/pkgs/epel-release/epel-release/
-* Fedora EPEL Next overview: https://fedoraproject.org/wiki/EPEL_Next
-* CentOS Stream 10 release notes: https://www.centos.org/centos10/
-* RHEL lifecycle: https://endoflife.date/rhel
-* Amazon Linux 2 FAQ: https://aws.amazon.com/amazon-linux-2/faqs/
+* [Fedora EPEL branches](https://tdawson.fedorapeople.org/epel-docs/public/epel/branches/)
+* [Fedora epel-release package overview](https://packages.fedoraproject.org/pkgs/epel-release/epel-release/)
+* [Fedora EPEL Next overview](https://fedoraproject.org/wiki/EPEL_Next)
+* [CentOS Stream 10 release notes](https://www.centos.org/centos10/)
+* [RHEL lifecycle](https://endoflife.date/rhel)
+* [Amazon Linux 2 FAQ](https://aws.amazon.com/amazon-linux-2/faqs/)

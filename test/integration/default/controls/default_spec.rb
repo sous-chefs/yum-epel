@@ -24,14 +24,12 @@ optional_repositories = %w(
   epel-testing-source
 )
 
-optional_repositories.concat(
-  %w(
-    epel-next-debuginfo
-    epel-next-source
-    epel-next-testing
-    epel-next-testing-debuginfo
-    epel-next-testing-source
-  )
+optional_repositories.push(
+  'epel-next-debuginfo',
+  'epel-next-source',
+  'epel-next-testing',
+  'epel-next-testing-debuginfo',
+  'epel-next-testing-source'
 ) if epel_next_expected
 
 optional_repositories.each do |repo|

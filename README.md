@@ -50,7 +50,7 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 
 ### Cookbooks
 
-- none
+* none
 
 ## Resources
 
