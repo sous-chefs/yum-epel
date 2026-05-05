@@ -1,0 +1,7 @@
+---
+name: default
+title: Default EPEL Repository Tests
+maintainer: Sous Chefs
+license: Apache-2.0
+summary: Verifies the default yum_epel resource behavior
+version: 1.0.0
