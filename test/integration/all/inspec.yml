@@ -1,0 +1,7 @@
+---
+name: all
+title: All EPEL Repository Tests
+maintainer: Sous Chefs
+license: Apache-2.0
+summary: Verifies all supported yum_epel repositories
+version: 1.0.0

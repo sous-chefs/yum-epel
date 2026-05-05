@@ -4,12 +4,17 @@ rules:
   line-length:
     max: 256
     level: warning
+  comments:
+    min-spaces-from-content: 1
   document-start: disable
+  empty-lines:
+    max: 2
   braces:
     forbid: false
     min-spaces-inside: 0
     max-spaces-inside: 1
     min-spaces-inside-empty: -1
     max-spaces-inside-empty: -1
-  comments:
-    min-spaces-from-content: 1
+ignore: |
+  .github/copilot-instructions.md
+  .windsurf/**

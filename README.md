@@ -6,36 +6,43 @@
 [![OpenCollective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Extra Packages for Enterprise Linux (or EPEL) is a Fedora Special Interest Group that creates, maintains, and manages a high quality set of additional packages for Enterprise Linux, including, but not limited to, Red Hat Enterprise Linux (RHEL), CentOS , CentOS Stream and Scientific Linux (SL), Oracle Linux (OL).
+Extra Packages for Enterprise Linux (or EPEL) is a Fedora Special Interest Group that creates, maintains, and manages a high quality set of additional packages for Enterprise Linux.
 
-The yum-epel cookbook takes over management of the default repositoryids shipped with epel-release.
+The yum-epel cookbook provides custom resources that wrap Chef Infra's `yum_repository` resource for the default repository IDs shipped by `epel-release` and `epel-next-release`.
 
-Below is a table showing which repositoryids we manage that are shipped by default via the epel-release package:
+For migration details from the legacy recipe and attribute API, see [migration.md](migration.md).
 
-| Repo ID                        | EL 7             | EL 8             | EL 9             | CentOS Stream 8  | CentOS Stream 9  |
-| ------------------------------ | :--------------: | :--------------: | :--------------: | :--------------: | :--------------: |
-| epel                           |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| epel-debuginfo                 |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| epel-next                      |       :x:        |       :x:        |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-next-debuginfo            |       :x:        |       :x:        |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-next-source               |       :x:        |       :x:        |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-next-testing              |       :x:        |       :x:        |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-next-testing-debug        |       :x:        |       :x:        |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-next-testing-source       |       :x:        |       :x:        |       :x:        |:heavy_check_mark:|:heavy_check_mark:|
-| epel-source                    |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing                   |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-debuginfo         |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| epel-testing-source            |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+Below is a table showing which repository IDs are managed by the cookbook resources:
+
+| Repo ID                        | EL 8 | EL 9 | EL 10 | CentOS Stream 9 |
+| ------------------------------ | :--: | :--: | :---: | :-------------: |
+| epel                           | yes  | yes  | yes   | yes             |
+| epel-debuginfo                 | yes  | yes  | yes   | yes             |
+| epel-next                      | no   | no   | no    | yes             |
+| epel-next-debuginfo            | no   | no   | no    | yes             |
+| epel-next-source               | no   | no   | no    | yes             |
+| epel-next-testing              | no   | no   | no    | yes             |
+| epel-next-testing-debug        | no   | no   | no    | yes             |
+| epel-next-testing-source       | no   | no   | no    | yes             |
+| epel-source                    | yes  | yes  | yes   | yes             |
+| epel-testing                   | yes  | yes  | yes   | yes             |
+| epel-testing-debuginfo         | yes  | yes  | yes   | yes             |
+| epel-testing-source            | yes  | yes  | yes   | yes             |
 
 ## Requirements
 
 ### Platforms
 
-- RHEL/CentOS and derivatives
+* AlmaLinux 8+
+* Amazon Linux 2023+
+* CentOS Stream 9+
+* Oracle Linux 8+
+* Red Hat Enterprise Linux 8+
+* Rocky Linux 8+
 
 ### Chef
 
-- Chef 12.15+
+* Chef 15.3+
 
 ## Maintainers
 
@@ -43,38 +50,36 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 
 ### Cookbooks
 
-- none
+* none
 
-## Attributes
+## Resources
 
-See individual repository attribute files for defaults.
-
-## Recipes
-
-- `yum-epel::default` Generates `yum_repository` configs for the standard EPEL repositories. By default the `epel` repository is enabled. For CentOS Stream, the [epel-next](https://docs.fedoraproject.org/en-US/epel/#what_is_epel_next) repository is also enabled.
+* [yum_epel](documentation/yum-epel_yum_epel.md)
+* [yum_epel_repository](documentation/yum-epel_yum_epel_repository.md)
 
 ## Usage Example
 
-To disable the epel repository through a Role or Environment definition
+Manage the default EPEL repositories. By default the `epel` repository is enabled. On CentOS Stream 9, `epel-next` is also enabled.
 
 ```ruby
-default_attributes(
-  :yum => {
-    :epel => {
-      :enabled => {
-        false
-       }
-     }
-   }
- )
+yum_epel 'default'
 ```
 
-Uncommonly used repositoryids are not managed by default. This is speeds up integration testing pipelines by avoiding yum-cache builds that nobody cares about. To enable the epel-testing repository with a wrapper cookbook, place the following in a recipe:
+Disable the `epel` repository while keeping it managed.
 
 ```ruby
-node.default['yum']['epel-testing']['enabled'] = true
-node.default['yum']['epel-testing']['managed'] = true
-include_recipe 'yum-epel'
+yum_epel 'default' do
+  disabled_repositories ['epel']
+end
+```
+
+Uncommonly used repository IDs are not managed by default. To manage and enable all supported repository IDs for the platform:
+
+```ruby
+yum_epel 'all' do
+  repositories :all
+  enabled_repositories :all
+end
 ```
 
 ## More Examples
@@ -82,12 +87,11 @@ include_recipe 'yum-epel'
 Point the epel repositories at an internally hosted server.
 
 ```ruby
-node.default['yum']['epel']['enabled'] = true
-node.default['yum']['epel']['mirrorlist'] = nil
-node.default['yum']['epel']['baseurl'] = 'https://internal.example.com/centos/7/os/x86_64'
-node.default['yum']['epel']['sslverify'] = false
-
-include_recipe 'yum-epel'
+yum_epel_repository 'epel' do
+  mirrorlist nil
+  baseurl 'https://internal.example.com/centos/9/os/x86_64'
+  sslverify false
+end
 ```
 
 ## Contributors
