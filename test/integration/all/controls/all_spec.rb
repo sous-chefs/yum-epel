@@ -4,7 +4,7 @@ os_release = os.name == 'amazon' ? 9 : os.release.to_i
 basearch = command('rpm --eval %{_arch}').stdout.strip
 stream = file('/etc/os-release').content.match?('Stream')
 epel_next_expected = stream && os_release < 10
-testing_prefix = os_release >= 10 ? 'epel-z-testing' : 'testing-epel'
+testing_repo = os_release >= 10 ? "epel-z-testing-#{os_release}" : "testing-epel#{os_release}"
 testing_debug_repo = os_release >= 10 ? "epel-z-testing-debug-#{os_release}" : "testing-debug-epel#{os_release}"
 testing_source_repo = os_release >= 10 ? "epel-z-testing-source-#{os_release}" : "testing-source-epel#{os_release}"
 
@@ -29,7 +29,7 @@ end
 describe yum.repo 'epel-testing' do
   it { should exist }
   it { should be_enabled }
-  its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=#{testing_prefix}-#{os_release}&arch=#{basearch}" }
+  its('mirrors') { should cmp "https://mirrors.fedoraproject.org/mirrorlist?repo=#{testing_repo}&arch=#{basearch}" }
 end
 
 describe yum.repo 'epel-testing-debuginfo' do
