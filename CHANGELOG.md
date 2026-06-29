@@ -2,6 +2,23 @@
 
 This file is used to list changes made in each version of the yum-epel cookbook.
 
+## [6.0.0](https://github.com/sous-chefs/yum-epel/compare/v5.0.10...v6.0.0) (2026-06-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate yum-epel to custom resources ([#114](https://github.com/sous-chefs/yum-epel/issues/114))
+
+### Features
+
+* migrate yum-epel to custom resources ([#114](https://github.com/sous-chefs/yum-epel/issues/114)) ([39bbdac](https://github.com/sous-chefs/yum-epel/commit/39bbdacbe2cdfbbdd0d853e3546225f7b5086e74))
+
+
+### Bug Fixes
+
+* 25 by only setting an attribute if there's a TrueValue or similar ([941fd94](https://github.com/sous-chefs/yum-epel/commit/941fd94db01bf11fdfcc9d6e900f54192ba8ac14))
+* **ci:** Update workflows to use release pipeline ([#109](https://github.com/sous-chefs/yum-epel/issues/109)) ([e7218fc](https://github.com/sous-chefs/yum-epel/commit/e7218fc0295780239295f755c7ac66d77b4b03a1))
+
 ## [5.0.10](https://github.com/sous-chefs/yum-epel/compare/5.0.9...v5.0.10) (2025-10-16)
 
 
